@@ -11,4 +11,4 @@ ENV HOME=/
 
 RUN nohup bash -c "ollama serve &" && sleep 5 && ollama pull llama3.2:1b
 
-ENTRYPOINT ["/nitro-attestation-shim", "-s", "-d", "inference-enclave.tinfoil.sh", "-e", "nate@tinfoil.sh", "-p", "/api/chat", "-u", "11434", "-c", "7443", "-l", "443", "--", "/bin/ollama", "serve"]
+ENTRYPOINT ["/nitro-attestation-shim", "-d", "inference-enclave.tinfoil.sh", "-e", "nate@tinfoil.sh", "-p", "/api/chat", "-u", "11434", "-c", "7443", "-l", "443", "--", "/bin/ollama", "serve"]
